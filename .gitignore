@@ -13,3 +13,10 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+solr/data 
+solr/test
+solr/development
+solr/default/data
+/log/*.log.lck
+*.swp

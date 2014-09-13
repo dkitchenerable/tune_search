@@ -18,7 +18,7 @@ development:
   database: tune_search_development
   pool: 5
   username: tune_search
-  password:
+  password: tcore1
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
@@ -44,7 +44,7 @@ test:
   database: tune_search_test
   pool: 5
   username: tune_search
-  password:
+  password: tcore1
 
 production:
   adapter: postgresql
@@ -52,4 +52,4 @@ production:
   database: tune_search_production
   pool: 5
   username: tune_search
-  password:
+  password: tcore1
