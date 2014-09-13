@@ -1,2 +1,2 @@
-tune_search
+A searchable music library
 ===========
