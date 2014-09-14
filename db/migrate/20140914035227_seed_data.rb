@@ -19,14 +19,24 @@ class SeedData < ActiveRecord::Migration
     album_data.each { |album|
       artist = album["artist_name"]
       album_title = album["album_title"]
-      album_id = album.album_id
+      album_id = album["album_id"]
       response = HTTParty.get("http://freemusicarchive.org/api/get/tracks.json", 
                               :query => {:api_key => "K5QDFJI669IV2UZV", :album_id => album_id})
       track_data = JSON.parse(response.body)["dataset"]
-      new_artist = Artist.create!(:name => artist)
-      new_album =  Album.create!(:title => album_title, :artist => new_artist)
+      new_artist = Artist.new
+      new_artist.name = artist
+      new_artist.save
+
+      new_album =  Album.new
+      new_album.title = album_title
+      new_album.artist = new_artist
+      new_album.save
+
       track_data.each { |track|
-        new_song = Song.create!(:title => track["track_title"], :album => new_album)
+        new_song = Song.new
+        new_song.title = track["track_title"]
+        new_song.album = new_album
+        new_song.save
       }
     }
   end
