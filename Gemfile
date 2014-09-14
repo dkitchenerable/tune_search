@@ -45,3 +45,5 @@ ruby '2.0.0'
 
 gem 'sunspot_rails'
 gem 'sunspot_solr'
+
+gem 'httparty'
