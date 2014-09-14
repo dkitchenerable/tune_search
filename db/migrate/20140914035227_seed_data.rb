@@ -14,7 +14,7 @@ class SeedData < ActiveRecord::Migration
 
   def seed_db
     response = HTTParty.get("http://freemusicarchive.org/api/get/albums.json", 
-                            :query => {:api_key => "K5QDFJI669IV2UZV", :genre_handle => 'Indie'})
+                            :query => {:api_key => "K5QDFJI669IV2UZV", :genre_handle => 'Rock'})
     album_data = JSON.parse(response.body)["dataset"]
     album_data.each { |album|
       artist = album["artist_name"]

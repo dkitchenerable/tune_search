@@ -47,3 +47,10 @@ gem 'sunspot_rails'
 gem 'sunspot_solr'
 
 gem 'httparty'
+
+group :test do
+  gem 'cucumber-rails', :require => false
+  gem 'database_cleaner'
+end
+
+gem 'sunspot_test', '~> 0.4.0'

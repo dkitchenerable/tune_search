@@ -38,13 +38,13 @@ development:
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
-test:
+test: &test
   adapter: postgresql
   encoding: unicode
   database: tune_search_test
   pool: 5
-  username: tune_search
-  password: tcore1
+  username: dkitchener
+  password: 
 
 production:
   adapter: postgresql
@@ -53,3 +53,6 @@ production:
   pool: 5
   username: tune_search
   password: tcore1
+
+cucumber:
+  <<: *test
