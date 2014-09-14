@@ -7,7 +7,7 @@ class SearchController < ApplicationController
   end
 
   def search
-    @results = song_search(params)
+    @results = song_search(params[:search])
     render 'index'
   end
 
