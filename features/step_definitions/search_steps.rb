@@ -27,14 +27,18 @@ When(/^I click "(.*?)"$/) do |button|
 end
 
 Then(/^I should see "(.*?)"$/) do |result_text|
-  page.has_content?("${result_text}")
+  assert page.has_content?(result_text)
 end
 
 Then(/^I should see "(.*?)" result$/) do |num_results|
-  page.has_content?("${num_results} Results")
+  assert page.has_content?("Displaying #{num_results} Results")
 end
 
 
-Then(/^I should not see "(.*?)" result$/) do |num_results|
-  page.has_content?("${num_results} Results") == false
+Then(/^I should not see "(.*?)"$/) do |num_results|
+  assert page.has_content?(" #{num_results} Results ") == false
+end
+
+Then(/^result "(.*?)" should be "(.*?)"$/) do |position, result_text|
+  assert page.has_content?("#{position} - #{result_text}")
 end
