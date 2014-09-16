@@ -35,4 +35,6 @@ ActiveRecord::Schema.define(:version => 20140914035227) do
     t.datetime "updated_at", :null => false
   end
 
+  add_index "songs", ["title"], :name => "index_songs_on_title"
+
 end

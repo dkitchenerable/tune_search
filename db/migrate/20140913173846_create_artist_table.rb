@@ -5,6 +5,8 @@ class CreateArtistTable < ActiveRecord::Migration
       t.text  :bio
       t.timestamps 
     end
+
+    add_index :artists, :name
   end
 
   def down

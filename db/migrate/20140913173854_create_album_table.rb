@@ -6,6 +6,7 @@ class CreateAlbumTable < ActiveRecord::Migration
       t.datetime :release_date
       t.timestamps
     end
+    add_index :albums, :title
   end
 
   def down
