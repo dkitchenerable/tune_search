@@ -6,9 +6,4 @@ class Artist < ActiveRecord::Base
   
   attr_accessible :name
 
-  searchable do
-    text :name
-  end
-
-
 end

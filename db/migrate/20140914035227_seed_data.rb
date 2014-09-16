@@ -1,8 +1,6 @@
 class SeedData < ActiveRecord::Migration
 
-=begin
-  A simple api call to seed the db. hard-coded genre.
-=end
+# A simple api call to seed the db. hard-coded genre.
 
   require 'httparty'
   require 'json'
