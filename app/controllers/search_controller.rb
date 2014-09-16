@@ -6,6 +6,8 @@ class SearchController < ApplicationController
 
   require "benchmark"
 
+  caches_page :index
+
   def index
   end
 
